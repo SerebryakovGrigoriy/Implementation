@@ -1,4 +1,4 @@
-{Интерфес для взаимодействия с формой "Дерево"}
+{Интерфесы для взаимодействия с формами "Основная" и "Дерево"}
 unit CustomInterfaces;
 
 interface
@@ -8,10 +8,16 @@ Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classe
 
 type
 
+  IMainFormInterface = interface
+  ['{C1AADE27-2121-473E-93AF-74939B90C643}']
+  // функция для получения объекта формы "Основная"
+  function GetForm: TForm;
+  end;
+
   ITreeFormInterface = interface
   ['{968361F2-65F0-49F7-A00C-964C05683681}']
-  // функция для получения объекта формы
-  function GetTreeForm: TForm;
+  // функция для получения объекта формы "Дополнительная"
+  function GetForm: TForm;
   end;
 
 implementation
